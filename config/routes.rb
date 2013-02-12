@@ -1,4 +1,7 @@
 Catalog::Application.routes.draw do
+  resources :shops
+
+
   resources :products
 
 
