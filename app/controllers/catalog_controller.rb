@@ -1,5 +1,5 @@
 class CatalogController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.vendible
   end
 end
