@@ -12,4 +12,12 @@ module ProductDecorator
   def display_description
     simple_format(description)
   end
+
+  def display_vendible
+    unless  vendible
+      content_tag :span, "販売中止", class: "label label-important"
+    else
+      ''
+    end
+  end
 end
