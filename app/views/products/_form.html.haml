@@ -20,5 +20,8 @@
     = image_tag(@product.image_url) if @product.image?
     = f.file_field :image
     = f.hidden_field :image_cache
+  .field
+    = f.label :vendible
+    = f.check_box :vendible
   .actions
     = f.submit 'Save', :class=>'btn'
