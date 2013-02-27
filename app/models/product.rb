@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :image, :image_cache, :vendible
+  attr_accessible :description, :name, :price, :image, :image_cache, :vendible, :recommend
   mount_uploader :image, ProductImageUploader
 
   validates_presence_of :name, :description
@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   validate :price_must_be_a_multiple_of_hundreds
 
 scope :vendible, where(:vendible => true)
+scope :recommend, where(:recommend => true)
 
   private
   def price_must_be_a_multiple_of_hundreds

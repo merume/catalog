@@ -14,8 +14,16 @@ module ProductDecorator
   end
 
   def display_vendible
-    unless  vendible
+    unless vendible
       content_tag :span, "販売中止", class: "label label-important"
+    else
+      ''
+    end
+  end
+
+  def display_recommend
+    if recommend
+      content_tag :span, 'おすすめ', class: "label label-info"
     else
       ''
     end
