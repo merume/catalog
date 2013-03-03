@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
 
 scope :vendible, where(:vendible => true)
 scope :recommend, where(:recommend => true)
+scope :recent, lambda{ |limit = 5| where(:vendible => true).order("created_at desc").limit(limit) }
 
   private
   def price_must_be_a_multiple_of_hundreds
