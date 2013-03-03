@@ -6,4 +6,8 @@ class CatalogController < ApplicationController
   def recommend
     @products = Product.recommend
   end
+
+  def recent
+    @products = Product.recent(5)
+  end
 end
