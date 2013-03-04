@@ -7,9 +7,11 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :name
   validate :price_must_be_a_multiple_of_hundreds
 
-scope :vendible, where(:vendible => true)
-scope :recommend, where(:recommend => true)
-scope :recent, lambda{ |limit = 5| where(:vendible => true).order("created_at desc").limit(limit) }
+  scope :vendible, where(:vendible => true)
+  scope :recommend, where(:recommend => true)
+  scope :recent, lambda{ |limit = 5| where(:vendible => true).order("created_at desc").limit(limit) }
+
+  belongs_to :category
 
   private
   def price_must_be_a_multiple_of_hundreds
