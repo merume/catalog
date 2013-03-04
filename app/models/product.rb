@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :image, :image_cache, :vendible, :recommend
+  attr_accessible :description, :name, :price, :image, :image_cache, :vendible, :recommend, :category_id
   mount_uploader :image, ProductImageUploader
 
   validates_presence_of :name, :description
