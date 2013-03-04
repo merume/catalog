@@ -28,4 +28,12 @@ module ProductDecorator
       ''
     end
   end
+
+  def category_name
+    if category_id
+      content_tag :span, "#{category.name}", class: "label label-info"
+    else
+      content_tag :span, "未分類", class: "label label-important"
+    end
+  end
 end

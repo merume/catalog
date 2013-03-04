@@ -3,6 +3,7 @@
 %table.table.table-striped.table-bordered
   %tr
     %th Name
+    %th Category
     %th Description
     %th Price
     %th Image
@@ -15,6 +16,7 @@
   - @products.each do |product|
     %tr
       %td= product.name
+      %td= product.category_name
       %td= simple_format(product.description)
       %td= product.price
       %td= image_tag(product.image_url) if product.image?
