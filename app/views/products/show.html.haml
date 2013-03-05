@@ -3,6 +3,9 @@
 %p.name
   %b Name:
   = @product.name
+%p.category_id
+  %b Category:
+  = @product.category_name
 .description
   %b Description:
   = simple_format(@product.description)
