@@ -1,6 +1,10 @@
 class CatalogController < ApplicationController
   def index
     @products = Product.vendible
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @products}
+    end
   end
 
   def recommend
